@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formula 1 — 2025 Season</title>
+    <meta name="description"
+        content="Official Formula 1 2025 Season — Explore all 11 teams, drivers, standings and the ultimate racing championship." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Barlow+Condensed:wght@300;400;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ===== VIDEO BACKGROUND ===== -->
+    <div class="video-bg" id="videoBg">
+        <video id="bgVideo" autoplay muted loop playsinline preload="auto">
+            <!-- Free F1/racing stock videos from Pexels (no sign-in, no embed restrictions) -->
+            <source src="https://videos.pexels.com/video-files/3295810/3295810-uhd_2560_1440_25fps.mp4"
+                type="video/mp4" />
+            <source src="https://videos.pexels.com/video-files/2842442/2842442-hd_1920_1080_30fps.mp4"
+                type="video/mp4" />
+        </video>
+        <div class="video-overlay"></div>
+        <div class="video-vignette"></div>
+    </div>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-f1">F1</span>
+                <span class="logo-text">FORMULA ONE</span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active" data-section="home">HOME</a></li>
+                <li><a href="#teams" class="nav-link" data-section="teams">TEAMS</a></li>
+                <li><a href="#drivers" class="nav-link" data-section="drivers">DRIVERS</a></li>
+                <li><a href="#standings" class="nav-link" data-section="standings">STANDINGS</a></li>
+            </ul>
+            <div class="nav-toggle" id="navToggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">2025 SEASON</div>
+            <h1 class="hero-title">
+                <span class="title-line">BORN TO</span>
+                <span class="title-line accent">RACE</span>
+            </h1>
+            <p class="hero-sub">11 Teams. 20 Drivers. One Championship.</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-num" data-target="24">0</span>
+                    <span class="stat-label">RACES</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-num" data-target="11">0</span>
+                    <span class="stat-label">TEAMS</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-num" data-target="20">0</span>
+                    <span class="stat-label">DRIVERS</span>
+                </div>
+            </div>
+            <a href="#teams" class="cta-btn">
+                <span>EXPLORE TEAMS</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+            <span>SCROLL DOWN</span>
+        </div>
+    </section>
+
+    <!-- ===== TEAMS SECTION ===== -->
+    <section id="teams" class="teams-section">
+        <div class="section-header">
+            <span class="section-badge">2025 GRID</span>
+            <h2 class="section-title">THE CONSTRUCTORS</h2>
+            <p class="section-sub">11 elite constructors battling for glory on every circuit</p>
+        </div>
+        <div class="teams-grid" id="teamsGrid"></div>
+    </section>
+
+    <!-- ===== DRIVERS SECTION ===== -->
+    <section id="drivers" class="drivers-section">
+        <div class="section-header">
+            <span class="section-badge">GRID</span>
+            <h2 class="section-title">THE DRIVERS</h2>
+            <p class="section-sub">20 elite athletes pushing beyond the limits of human performance</p>
+        </div>
+        <div class="drivers-filter" id="driversFilter">
+            <button class="filter-btn active" data-team="all" id="filter-all">ALL</button>
+        </div>
+        <div class="drivers-grid" id="driversGrid"></div>
+    </section>
+
+    <!-- ===== STANDINGS SECTION ===== -->
+    <section id="standings" class="standings-section">
+        <div class="section-header">
+            <span class="section-badge">2025</span>
+            <h2 class="section-title">CHAMPIONSHIP STANDINGS</h2>
+            <p class="section-sub">The battle for the World Championship</p>
+        </div>
+        <div class="standings-container">
+            <div class="standings-col">
+                <h3 class="standings-col-title">DRIVERS CHAMPIONSHIP</h3>
+                <div class="standings-table" id="driverStandings"></div>
+            </div>
+            <div class="standings-col">
+                <h3 class="standings-col-title">CONSTRUCTORS CHAMPIONSHIP</h3>
+                <div class="standings-table" id="constructorStandings"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="logo-f1">F1</span>
+                <span>FORMULA ONE WORLD CHAMPIONSHIP</span>
+            </div>
+            <p class="footer-copy">© 2025 Formula One World Championship Limited. Fan tribute site.</p>
+        </div>
+    </footer>
+
+    <!-- ===== MODAL ===== -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="modal">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-content" id="modalContent"></div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
